@@ -1,3 +1,4 @@
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
 int main(void)
@@ -28,7 +29,8 @@ int main(void)
         glBegin(GL_TRIANGLES);
         glVertex2f(-0.5f, -0.5f);
         glVertex2f(0.5f, 1.0f);
-        glVertex2f(2.0f, 0.5f);
+        glVertex2f(1.0f, 0.5f);
+      
         glEnd();
 
         /* Swap front and back buffers */
