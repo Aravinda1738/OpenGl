@@ -30,7 +30,7 @@ int main(void)
         glVertex2f(-0.5f, -0.5f);
         glVertex2f(0.5f, 1.0f);
         glVertex2f(1.0f, 0.5f);
-      
+      //testing commit
         glEnd();
 
         /* Swap front and back buffers */
