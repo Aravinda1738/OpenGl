@@ -1,8 +1,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <random>
-
+//#include <random>
+//#include <string>
 
 static unsigned int CompileShaders(unsigned int type,const std::string& source ) {
 
@@ -69,8 +69,8 @@ int main(void)
     
     float positions[6] = {
     -0.5f,-0.5f,
-    0.5f, 1.0f,
-    1.0f, 0.5f
+    0.0f, 0.5f,
+    0.5f,-0.5f
     };
 
     unsigned int buffer;
@@ -82,10 +82,12 @@ int main(void)
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
 
-    /*std::random_device rd;
+  /*  std::random_device rd;
     std::mt19937 eng(rd());
-    std::uniform_real_distribution<> distr(0.0, 1.0);
-    double randomNumber = distr(eng);*/
+    std::uniform_real_distribution<> distr(0.0, 1.0);     random num between 0.0,1.0
+    double randomNumber = distr(eng);
+    std::string num = std::to_string(randomNumber);*/
+
 
     std::string vertexShader =
         "#version 330 core\n"
