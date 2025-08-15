@@ -10,6 +10,7 @@
 #include "IndexBuffer.h"
 #include "VertexArray.h"
 #include "Shader.h"
+#include "VertexBufferLayout.h"
 
 
 
@@ -158,7 +159,7 @@ int main(void)
         shader.UnBind();
 
 
-       
+        Renderer renderer;
 
        /* GLCall(int location = glGetUniformLocation(shader, "u_Color"));*/
 
@@ -168,16 +169,12 @@ int main(void)
         while (!glfwWindowShouldClose(window))
         {
             /* Render here */
-            GLCall(glClear(GL_COLOR_BUFFER_BIT));
+            renderer.Clear();
 
             //  GLCall(glUseProgram(shader)); glDrawArrays(GL_TRIANGLES,0, 3);
             shader.Bind();
            shader.SetUniform4f("u_Color",r, 0.3f, 0.8f, 1.0f);
-
-            va.bind();
-            ib.bind();
-
-            GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+           renderer.Draw(va,ib,shader);
 
             if (r > 1.0f)
             {
